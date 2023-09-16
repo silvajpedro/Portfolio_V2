@@ -15,7 +15,9 @@ export default function Projects() {
     arquivo carousel.jsx e project style.jsx */}
           {Projects_Carousel.map((item)=>(
             <figure>
+              <a href={item.link} target="_blank">
            <img src={item.projeto} alt="imagem dos projetos do joao"/>
+            </a>
            <figcaption>{item.descricao_projeto}</figcaption>
             </figure> 
           ))}

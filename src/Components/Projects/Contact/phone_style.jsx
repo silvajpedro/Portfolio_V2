@@ -28,8 +28,8 @@ position: absolute;
 color:#ffff;
 }
 h2{
-    top:33vh;
-    font-size: 2.10vw;
+    top:34.5vh;
+    font-size: 1.65vw;
 }
 h4{
     font-size: 1.25vw;
