@@ -1,6 +1,7 @@
 import styled, { createGlobalStyle } from "styled-components";
 import Binary_background from "./assets/Binary_background.jpg";
 import PressStart from "./assets/PressStart2P-vaV7.ttf";
+
 export const DefaultText = "#ffff";
 export const DinamicText = "#00b100";
 
