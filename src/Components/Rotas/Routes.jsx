@@ -4,7 +4,8 @@ import About from "../About/About.jsx";
 import Projects from "../Projects/Projects.jsx";
 import Logo from "../../assets/logo3.png";
 import * as S from "./Routes_style.jsx";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import MeuContexto from "../Services/Context.jsx";
 
 export default function Rotas() {
   const [link, setLinks] = useState({
@@ -12,6 +13,11 @@ export default function Rotas() {
     About: false,
     Projects: false,
   });
+
+// Informações da API
+const infoComponents = useContext(MeuContexto)
+
+
   return (
     <>
       <BrowserRouter>

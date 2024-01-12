@@ -1,14 +1,18 @@
 import { AlignBox, ContentBox } from "../../GlobalStyle";
 import * as S from "./About_style.jsx";
 import Coding from "../../assets/coding.png";
-import { HabilitiesInfo } from "./Habilities_assets";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import MeuContexto from "../Services/Context";
 
 export default function About() {
   const [guardaId,setGuardaId] = useState({
     id:0,
     modal:true
   });
+
+  const infoApi = useContext(MeuContexto)
+
+
   return (
     <AlignBox>
       <ContentBox SizeH="195vh">
@@ -37,21 +41,21 @@ export default function About() {
           <S.TecnologiesBox>
             <S.TecnologiesDescription>
               
-              <h2>{guardaId.modal === true ? "" :HabilitiesInfo[guardaId.id].title}</h2>
-              <p>{ guardaId.modal === true ? "Passe o mouse no card para ler" : HabilitiesInfo[guardaId.id].description}</p>
+              <h2>{guardaId.modal === true ? "" : infoApi.data.body1[0].items[guardaId.id].titulo_habilidades[0].text}</h2>
+              <p>{ guardaId.modal === true ? "Passe o mouse no card para ler" : infoApi.data.body1[0].items[guardaId.id].texto_habilidade[0].text}</p>
             
             </S.TecnologiesDescription>
             <S.TecnologiesImages>
               
-              {HabilitiesInfo.map((item) => (
+              {infoApi.data.body1[0].items.map((item) => (
                 <S.FigureHabilities
                 // aqui o id que vem do map está sendo guardado na const guardaId para mostrar
                 // a informação condizente com as tecnologias
                  onMouseOut={()=>{setGuardaId({modal:true})}}
                  onMouseOver={()=>{setGuardaId({id:item.id, modal:false})}} 
                  key={item.id} 
-                 BackImage={item.lightImage}>
-                  <S.HabilitiesImage key={item.id} src={item.darkImage} alt="" />
+                 BackImage={item.lightimage.url}>
+                  <S.HabilitiesImage key={item.id} src={ item.habilidade.url} alt="" />
                 </S.FigureHabilities>
               ))}
             </S.TecnologiesImages>
