@@ -64,9 +64,10 @@ export const TecnologiesDescription = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
-  width: 55%;
+  width: 54%;
   height: 48vh;
   margin-right:1.5vw;
+  border: solid purple;
   h2,
   p {
     font-family: "Inconsolata", monospace;
@@ -79,8 +80,10 @@ export const TecnologiesDescription = styled.div`
   p {
     font-size: 2.30vw;
     line-height: 38px;
-    text-align: justify;
-    padding:10px;
+
+    padding:12px;
+    border: solid;
+    word-spacing: -5px;
   }
 `;
 export const HabilitiesImage = styled.img`
@@ -98,7 +101,8 @@ export const FigureHabilities = styled.figure`
   transition: ease 0.3s;
   background-image: url(${(props) => props.BackImage});
   background-position: center;
-  background-size: 68%;
+  /* background-size:${(props)=> props.BackSize}; */
+  background-size: 73%;
   filter: grayscale(100%);
   background-repeat: no-repeat;
   &:hover {

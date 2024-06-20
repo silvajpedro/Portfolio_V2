@@ -5,9 +5,10 @@ import { useContext, useState } from "react";
 import MeuContexto from "../Services/Context";
 
 export default function About() {
+  
   const [guardaId,setGuardaId] = useState({
-    id:0,
-    modal:true
+    id:7,
+    modal:false
   });
 
   const infoApi = useContext(MeuContexto)
@@ -54,8 +55,10 @@ export default function About() {
                  onMouseOut={()=>{setGuardaId({modal:true})}}
                  onMouseOver={()=>{setGuardaId({id:item.id, modal:false})}} 
                  key={item.id} 
-                 BackImage={item.lightimage.url}>
-                  <S.HabilitiesImage key={item.id} src={ item.habilidade.url} alt="" />
+                 BackImage={item.lightimage.url}
+                //  BackSize={guardaId.id === item.id ? "68%" : "1%"}
+                 >
+                  <S.HabilitiesImage key={item.id} src={ item.habilidade.url} alt={item.habilidade.alt} />
                 </S.FigureHabilities>
               ))}
             </S.TecnologiesImages>
