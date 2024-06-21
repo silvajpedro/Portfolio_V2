@@ -58,7 +58,7 @@ export default function About() {
                  BackImage={item.lightimage.url}
                 //  BackSize={guardaId.id === item.id ? "68%" : "1%"}
                  >
-                  <S.HabilitiesImage key={item.id} src={ item.habilidade.url} alt={item.habilidade.alt} />
+                  <S.HabilitiesImage key={item.id} src={ item.darkimage.url} alt={item.habilidade.alt} />
                 </S.FigureHabilities>
               ))}
             </S.TecnologiesImages>
